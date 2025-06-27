@@ -1,15 +1,19 @@
 <?php
+// src/Entity/User.php
 
 namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
-#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
+#[UniqueEntity(fields: ['email'], message: 'Bu e-posta adresi zaten kullanılıyor.')]
+#[UniqueEntity(fields: ['username'], message: 'Bu kullanıcı adı zaten kullanılıyor.')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -17,8 +21,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 180)]
+    #[ORM\Column(length: 180, unique: true)]
+    #[Assert\NotBlank(message: 'E-posta boş bırakılamaz.')]
+    #[Assert\Email(message: 'Geçerli bir e-posta adresi girin.')]
     private ?string $email = null;
+
+    #[ORM\Column(length: 255, unique: true)]
+    #[Assert\NotBlank(message: 'Kullanıcı adı boş bırakılamaz.')]
+    #[Assert\Length(min: 3, max: 50, minMessage: 'Kullanıcı adı en az {{ limit }} karakter olmalı.', maxMessage: 'Kullanıcı adı en fazla {{ limit }} karakter olmalı.')]
+    private ?string $username = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Length(max: 255, maxMessage: 'Tam ad en fazla {{ limit }} karakter olmalı.')]
+    private ?string $fullName = null;
 
     /**
      * @var list<string> The user roles
@@ -45,7 +60,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setEmail(string $email): static
     {
         $this->email = $email;
-
         return $this;
     }
 
@@ -57,6 +71,28 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getUserIdentifier(): string
     {
         return (string) $this->email;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): static
+    {
+        $this->username = $username;
+        return $this;
+    }
+
+    public function getFullName(): ?string
+    {
+        return $this->fullName;
+    }
+
+    public function setFullName(?string $fullName): static
+    {
+        $this->fullName = $fullName;
+        return $this;
     }
 
     /**

@@ -1,5 +1,11 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+# config/routes.yaml
+
+# Controller'lardaki #[Route] niteliklerini otomatik olarak yükle
+app_controllers:
+    resource: '../src/Controller/'
     type: attribute
+
+# config/routes/ klasöründeki diğer tüm route dosyalarını içe aktar (örneğin framework.yaml)
+_import_extra_routes:
+    resource: './routes/'
+    type: directory

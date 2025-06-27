@@ -1,0 +1,137 @@
+{# templates/registration/register.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Kayıt Ol{% endblock %}
+
+{% block body %}
+    <style>
+        .register-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .register-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't add to the width */
+        }
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .form-check {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .form-check input {
+            margin-right: 10px;
+        }
+        .form-error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .flash-messages {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .flash-messages li {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            color: white;
+        }
+        .flash-messages li.success {
+            background-color: #28a745; /* Green for success */
+        }
+        .flash-messages li.error {
+            background-color: #dc3545; /* Red for error */
+        }
+    </style>
+
+    <div class="register-container">
+        <h1>Kayıt Ol</h1>
+
+        {% for message in app.flashes('success') %}
+            <ul class="flash-messages">
+                <li class="success">{{ message }}</li>
+            </ul>
+        {% endfor %}
+        {# Aşağıdaki satırda, hata mesajını doğrudan Twig değişkeni olarak alıp kullanmalıyız. #}
+        {% for message in app.flashes('error') %}
+            <ul class="flash-messages">
+                <li class="error">{{ message }}</li>
+            </ul>
+        {% endfor %}
+
+
+        {{ form_errors(registrationForm) }}
+
+        {{ form_start(registrationForm) }}
+        <div class="form-group">
+            {{ form_label(registrationForm.email) }}
+            {{ form_widget(registrationForm.email) }}
+            {{ form_errors(registrationForm.email) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(registrationForm.username) }}
+            {{ form_widget(registrationForm.username) }}
+            {{ form_errors(registrationForm.username) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(registrationForm.fullName) }}
+            {{ form_widget(registrationForm.fullName) }}
+            {{ form_errors(registrationForm.fullName) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(registrationForm.plainPassword) }}
+            {{ form_widget(registrationForm.plainPassword) }}
+            {{ form_errors(registrationForm.plainPassword) }}
+        </div>
+
+        <div class="form-check">
+            {{ form_widget(registrationForm.agreeTerms) }}
+            {{ form_label(registrationForm.agreeTerms) }}
+            {{ form_errors(registrationForm.agreeTerms) }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+        {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}
