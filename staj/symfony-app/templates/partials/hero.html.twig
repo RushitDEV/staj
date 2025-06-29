@@ -1,0 +1,75 @@
+<section class="gothic-hero">
+    <div class="gothic-hero-bg"></div>
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6">
+                <div class="gothic-hero-content">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="fas fa-moon gothic-moon-icon me-3"></i>
+                        <span class="gothic-subtitle">Karanlığın Sanat Atölyesi</span>
+                    </div>
+
+                    <h2 class="gothic-hero-title mb-4">
+                        <span class="gothic-gradient-text">Gotik Sanatın</span><br>
+                        <span class="text-white">Mistik Dünyası</span>
+                    </h2>
+
+                    <p class="gothic-hero-description mb-5">
+                        Karanlığın derinliklerinden çıkan her eser, ruhunuza dokunacak güçte.
+                        {{ stats.years_experience }} yıldır gotik sanatın sırlarını keşfediyor,
+                        {{ stats.happy_customers }}+ karanlık ruha hizmet ediyoruz.
+                    </p>
+
+                    <div class="gothic-hero-buttons mb-5">
+                        <a href="#products" class="btn gothic-btn-primary btn-lg me-3">
+                            <i class="fas fa-fire me-2"></i>Karanlık Koleksiyonu Keşfet
+                        </a>
+                        <a href="https://www.etsy.com/shop/YourShopName" target="_blank" class="btn gothic-btn-outline btn-lg">
+                            <i class="fas fa-external-link-alt me-2"></i>Etsy'de Ziyaret Et
+                        </a>
+                    </div>
+
+                    <div class="row gothic-stats">
+                        <div class="col-4">
+                            <div class="gothic-stat-card">
+                                <div class="gothic-stat-number text-danger">{{ stats.total_sales }}</div>
+                                <div class="gothic-stat-label">Karanlık Eser</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="gothic-stat-card">
+                                <div class="gothic-stat-number text-purple">{{ stats.happy_customers }}+</div>
+                                <div class="gothic-stat-label">Karanlık Ruh</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="gothic-stat-card">
+                                <div class="d-flex align-items-center justify-content-center mb-1">
+                                    <i class="fas fa-star text-warning me-1"></i>
+                                    <span class="gothic-stat-number text-warning">{{ stats.average_rating }}</span>
+                                </div>
+                                <div class="gothic-stat-label">Mistik Puan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="gothic-hero-image">
+                    <img src="/images/hero/gothic-art-collection.jpg" alt="Gotik sanat eserleri" class="img-fluid rounded gothic-shadow">
+
+                    <div class="gothic-floating-badge gothic-badge-1">
+                        <i class="fas fa-eye text-danger"></i>
+                        <span>Karanlık Büyü</span>
+                    </div>
+
+                    <div class="gothic-floating-badge gothic-badge-2">
+                        <i class="fas fa-crown text-purple"></i>
+                        <span>El Yapımı</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

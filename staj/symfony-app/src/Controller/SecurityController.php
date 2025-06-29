@@ -21,7 +21,12 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        // Twig şablonunu render ederken site_title değişkenini gönder
+        return $this->render('security/login.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error,
+            'site_title' => 'Dark Arts Atelier - Giriş Yap', // <-- Bu satırı ekledim
+        ]);
     }
 
     #[Route(path: '/logout', name: 'app_logout')]

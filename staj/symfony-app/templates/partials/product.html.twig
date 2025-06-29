@@ -1,0 +1,55 @@
+<section id="products" class="gothic-products py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                <i class="fas fa-fire gothic-section-icon text-danger me-3"></i>
+                <h2 class="gothic-section-title gothic-gradient-text mb-0">Karanlık Koleksiyon</h2>
+                <i class="fas fa-fire gothic-section-icon text-danger ms-3"></i>
+            </div>
+            <p class="gothic-section-subtitle">Ruhunuza dokunacak gotik sanat eserleri</p>
+        </div>
+
+        <div class="row g-4">
+            {% for product in featured_products %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="gothic-product-card">
+                        <div class="gothic-product-image">
+                            <img src="{{ product.image }}" alt="{{ product.name }}" class="img-fluid">
+                            <div class="gothic-product-overlay">
+                                <div class="gothic-product-overlay-content">
+                                    <a href="{{ product.etsy_url }}" target="_blank" class="btn gothic-btn-primary">
+                                        <i class="fas fa-external-link-alt me-2"></i>Karanlığa Dal
+                                    </a>
+                                </div>
+                            </div>
+
+                            {% if product.stock_status == 'in_stock' %}
+                                <div class="gothic-product-badge">
+                                    <i class="fas fa-skull me-1"></i>Mevcut
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="gothic-product-content">
+                            <h3 class="gothic-product-title">{{ product.name }}</h3>
+                            <p class="gothic-product-description">{{ product.description }}</p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="gothic-product-price">{{ product.price }} {{ product.currency }}</span>
+                                <a href="{{ product.etsy_url }}" target="_blank" class="btn gothic-btn-sm">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="https://www.etsy.com/shop/YourShopName" target="_blank" class="btn gothic-btn-outline btn-lg">
+                <i class="fas fa-external-link-alt me-2"></i>Tüm Karanlık Koleksiyonu Keşfet
+            </a>
+        </div>
+    </div>
+</section>

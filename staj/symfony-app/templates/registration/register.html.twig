@@ -3,8 +3,9 @@
 
 {% block title %}Kayıt Ol{% endblock %}
 
-{% block body %}
+{% block content %} {# Bu block adı base.html.twig ile uyumlu olmalı #}
     <style>
+        /* Gothic Stillerinizi buraya taşıyabilirsiniz veya ayrı bir CSS dosyasına ekleyebilirsiniz */
         .register-container {
             max-width: 500px;
             margin: 50px auto;
@@ -90,38 +91,38 @@
                 <li class="success">{{ message }}</li>
             </ul>
         {% endfor %}
-        {# Aşağıdaki satırda, hata mesajını doğrudan Twig değişkeni olarak alıp kullanmalıyız. #}
         {% for message in app.flashes('error') %}
             <ul class="flash-messages">
                 <li class="error">{{ message }}</li>
             </ul>
         {% endfor %}
 
-
         {{ form_errors(registrationForm) }}
 
         {{ form_start(registrationForm) }}
         <div class="form-group">
             {{ form_label(registrationForm.email) }}
-            {{ form_widget(registrationForm.email) }}
+            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(registrationForm.email) }}
         </div>
 
+        {# USERNAME ALANINI BURADA AKTİF EDİYORUZ #}
         <div class="form-group">
             {{ form_label(registrationForm.username) }}
-            {{ form_widget(registrationForm.username) }}
+            {{ form_widget(registrationForm.username, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(registrationForm.username) }}
         </div>
 
+        {# FULLNAME ALANINI BURADA AKTİF EDİYORUZ #}
         <div class="form-group">
             {{ form_label(registrationForm.fullName) }}
-            {{ form_widget(registrationForm.fullName) }}
+            {{ form_widget(registrationForm.fullName, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(registrationForm.fullName) }}
         </div>
 
         <div class="form-group">
             {{ form_label(registrationForm.plainPassword) }}
-            {{ form_widget(registrationForm.plainPassword) }}
+            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(registrationForm.plainPassword) }}
         </div>
 
