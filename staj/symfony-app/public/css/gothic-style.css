@@ -796,3 +796,83 @@
 
 .register-container {color: black
 }
+
+/* Sadece Giriş Yap ve Kayıt Ol Butonları İçin Gotik CSS */
+
+.btn-auth {
+    /* Genel buton görünümü */
+    font-family: 'MedievalSharp', cursive; /* Gotik el yazısı font - Eğer yüklüyse */
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px 15px; /* Buton içi boşluk */
+    margin-left: 10px; /* Diğer menü öğelerinden boşluk */
+    border-radius: 3px; /* Hafif yuvarlatılmış köşeler (istenirse 0px de yapılabilir) */
+    transition: all 0.3s ease; /* Hover efekti için geçiş */
+    cursor: pointer; /* Fare imleci değişimi */
+
+    /* Renkler ve Kenarlık */
+    background-color: #400000; /* Koyu bordo arka plan */
+    color: #f0e6d6; /* Açık metin rengi */
+    border: 1px solid #800000; /* Koyu bordo kenarlık */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Hafif gölge */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Hafif metin gölgesi */
+}
+
+.btn-auth:hover {
+    /* Hover (üzerine gelme) efekti */
+    background-color: #600000; /* Hover'da daha açık bordo */
+    color: #fff; /* Hover'da beyaz metin */
+    border-color: #a00000; /* Hover'da daha açık bordo kenarlık */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6); /* Hover'da daha belirgin gölge */
+}
+
+/* Eğer "Çıkış Yap" butonu için farklı bir stil isterseniz (isteğe bağlı) */
+.btn-logout {
+    font-family: 'MedievalSharp', cursive;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    background-color: #2f4f4f; /* Koyu deniz yeşili */
+    color: #f0e6d6;
+    border: 1px solid #4682b4; /* Çelik mavisi kenarlık */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.btn-logout:hover {
+    background-color: #4f6f6f;
+    color: #fff;
+    border-color: #6699cc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+/* Eğer Etsy butonu da navbar'daysa ve ayrı bir stile sahipse (isteğe bağlı) */
+.btn-etsy {
+    font-family: 'MedievalSharp', cursive;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    background-color: #e0b0ff; /* Açık mor */
+    color: #1a001a; /* Koyu metin */
+    border: 1px solid #e0b0ff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+.btn-etsy:hover {
+    background-color: #f0d0ff; /* Hover'da daha açık */
+    color: #0d0d0d;
+    border-color: #f0d0ff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}

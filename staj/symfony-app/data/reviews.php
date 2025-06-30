@@ -8,7 +8,7 @@ return [
         'date' => '2024-12-15',
         'product_id' => 1,
         'verified' => true,
-        'customer_avatar' => '/images/avatars/raven-m.jpg'
+        'customer_avatar' => '/image/avatars/raven-m.jpg'
     ],
     [
         'id' => 2,
@@ -18,7 +18,7 @@ return [
         'date' => '2024-12-10',
         'product_id' => 2,
         'verified' => true,
-        'customer_avatar' => '/images/avatars/damien-k.jpg'
+        'customer_avatar' => '/image/avatars/damien-k.jpg'
     ],
     [
         'id' => 3,
@@ -28,7 +28,7 @@ return [
         'date' => '2024-12-08',
         'product_id' => 3,
         'verified' => true,
-        'customer_avatar' => '/images/avatars/luna-s.jpg'
+        'customer_avatar' => '/image/avatars/luna-s.jpg'
     ],
     [
         'id' => 4,
@@ -38,7 +38,7 @@ return [
         'date' => '2024-12-05',
         'product_id' => 4,
         'verified' => true,
-        'customer_avatar' => '/images/avatars/morticia-a.jpg'
+        'customer_avatar' => '/image/avatars/morticia-a.jpg'
     ],
     [
         'id' => 5,
@@ -48,7 +48,7 @@ return [
         'date' => '2024-12-01',
         'product_id' => 5,
         'verified' => true,
-        'customer_avatar' => '/images/avatars/edgar-v.jpg'
+        'customer_avatar' => '/image/avatars/edgar-v.jpg'
     ],
     [
         'id' => 6,
@@ -58,7 +58,7 @@ return [
         'date' => '2024-11-28',
         'product_id' => 6,
         'verified' => true,
-        'customer_avatar' => '/images/avatars/lilith-d.jpg'
+        'customer_avatar' => '/image/avatars/lilith-d.jpg'
     ],
     [
         'id' => 7,
@@ -68,7 +68,7 @@ return [
         'date' => '2024-11-25',
         'product_id' => 7,
         'verified' => true,
-        'customer_avatar' => '/images/avatars/vlad-t.jpg'
+        'customer_avatar' => '/image/avatars/vlad-t.jpg'
     ],
     [
         'id' => 8,
@@ -78,7 +78,7 @@ return [
         'date' => '2024-11-20',
         'product_id' => 8,
         'verified' => true,
-        'customer_avatar' => '/images/avatars/selene-b.jpg'
+        'customer_avatar' => '/image/avatars/selene-b.jpg'
     ]
 ];
 ?>

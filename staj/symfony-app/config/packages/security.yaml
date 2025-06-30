@@ -17,7 +17,7 @@ security:
 
     firewalls:
         dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            pattern: ^/(_(profiler|wdt)|css|image|js)/
             security: false
 
         main:
@@ -29,6 +29,7 @@ security:
                 check_path: app_login
                 default_target_path: app_home
 
-            logout:
-                path: logout
-                target: /
+            logout: # Çıkış yapma yapılandırması
+                path: app_logout # Kullanıcının çıkış yapacağı URL yolu (route adı)
+                target: app_home  # Çıkış yaptıktan sonra yönlendirilecek URL yolu (route adı)
+                # invalidate_session: true # Oturumu geçersiz kıl. Varsayılan olarak true'dur.

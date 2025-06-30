@@ -8,3 +8,11 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+/symfony/var/
+/.idea/           # Tüm .idea klasörünü görmezden gelmek için bu satır önemli
+/.phpstorm.meta.php
+/.webstorm.meta.php
+/.vscode/
+/config/secrets/
+/public/uploads/
