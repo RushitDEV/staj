@@ -1,4 +1,4 @@
-{# templates/partials/footer.html.twig (DÜZELTİLMİŞ HALİ - SADECE ORTAK İÇERİK) #}
+
 <footer class="gothic-footer py-5">
     <div class="container">
         <div class="row">
@@ -13,12 +13,41 @@
                 </p>
             </div>
 
-            {# 'Karanlık Yollar' ve 'Karanlık Takip' kısımları BURADAN KESİLDİ #}
+            <div class="gothic-extra-footer-sections"> {# Bu div'i veya section'ı ekleyebilirsiniz #}
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="gothic-footer-heading">
+                            <i class="fas fa-flame me-2"></i>Karanlık Yollar
+                        </h4>
+                        <ul class="gothic-footer-links">
+                            <li><a href="#products">Karanlık Koleksiyon</a></li>
+                            <li><a href="#about">Hikayemiz</a></li>
+                            <li><a href="#reviews">Ruhlar Konuşuyor</a></li>
+                            <li><a href="#contact">Karanlık Portal</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="gothic-footer-heading">
+                            <i class="fas fa-eye me-2"></i>Karanlık Takip
+                        </h4>
+                        <div class="gothic-footer-social">
+                            <a href="https://www.etsy.com/shop/YourShopName" target="_blank" class="gothic-footer-social-link">
+                                <i class="fab fa-etsy"></i> Etsy
+                            </a>
+                            <a href="https://instagram.com/yourshop" target="_blank" class="gothic-footer-social-link">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                    {# Eğer `footer.html.twig`'den kestiğiniz başka sütunlar varsa (örneğin ilk col-md-4'ten), onlar da buraya gelmeli. #}
+                </div>
+                <hr class="gothic-footer-divider"> {# Eğer divider da buradan kesildiyse #}
+            </div>
 
         </div>
 
-        {# Divider da buradan kesildi #}
-        {# <hr class="gothic-footer-divider"> #}
+
+         <hr class="gothic-footer-divider">
 
         <div class="text-center">
             <p class="gothic-footer-copyright">
