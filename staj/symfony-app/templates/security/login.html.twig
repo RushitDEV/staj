@@ -1,36 +1,182 @@
 {# templates/security/login.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Giriş Yap - Dark Arts Atelier{% endblock %} {# Başlığı güncelledik #}
 
-{% block content %} {# BURAYI 'content' OLARAK DÜZELTİN #}
-    {# ... (daha önce vermiş olduğunuz login formu kodu) ... #}
-    <form method="post" action="{{ path('app_login') }}">
-        {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
+{% block content %}
+    <style>
+        /* Genel Arka Plan ve Metin Rengi (base.html.twig'de ayarlanmış olabilir, burada özel ayar) */
+        body {
+            background-color: #0d0d0d; /* Daha koyu, kömür siyahı */
+            color: #b0a08e; /* Eskitilmiş kağıt tonu */
+            font-family: 'Georgia', serif; /* Klasik, ağırbaşlı serif font */
+        }
 
-        {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        /* Giriş Konteyneri Stilleri */
+        .login-container {
+            max-width: 500px;
+            margin: 60px auto; /* Biraz daha dikey boşluk */
+            padding: 40px;
+            border: 2px solid #333; /* Koyu gri, sağlam kenarlık */
+            border-radius: 0; /* Köşeleri keskin tut */
+            box-shadow: 0 0 25px rgba(0,0,0,0.8); /* Daha yoğun ve yaygın gölge */
+            background: linear-gradient(to bottom, #1c1c1c, #111111); /* Hafif gradyanlı koyu arka plan */
+            position: relative;
+            overflow: hidden;
+            /* Hafif tekstür efekti için */
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgPHBhdGggZmlsbD0iIzMzMyIgZD0iTTAgMGgyMHYyMEgwVjB6TTUgNWgxMHYxMEg1VjV6IiBvcGFjaXR5PSIwLjAxIi8+CiAgPC9nPgogPC9zdmc+');
+            background-repeat: repeat;
+        }
+
+        /* Başlık Stilleri */
+        .login-container h1 {
+            text-align: center;
+            margin-bottom: 45px;
+            color: #d4c2a6; /* Soluk altın tonu */
+            font-family: 'MedievalSharp', cursive; /* Gotik el yazısı font - Eğer yüklüyse */
+            font-size: 2.8em; /* Daha da büyük başlık */
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.9); /* Çok derin gölge */
+            letter-spacing: 3px;
+            text-transform: uppercase; /* Başlığı tamamen büyük harf yap */
+            border-bottom: 1px dashed #555; /* Kesik çizgi altı */
+            padding-bottom: 20px;
+        }
+
+        /* Etiketler */
+        .login-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: normal; /* Daha az kalın */
+            color: #c9bdae; /* Metinle uyumlu daha açık ton */
+            font-size: 1.2em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            text-transform: capitalize; /* İlk harfi büyük yap */
+        }
+
+        /* Giriş Alanları */
+        .login-container .form-control { /* class'ı .form-control olduğu için bu stile uyacak */
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #444; /* Koyu gri kenarlık */
+            border-radius: 0; /* Köşesiz */
+            box-sizing: border-box;
+            background-color: #222; /* Kömür rengi arka plan */
+            color: #f0e6d6; /* Açık metin rengi */
+            font-size: 1.1em;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.8); /* Daha belirgin iç gölge */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .login-container .form-control:focus {
+            border-color: #888; /* Odakta biraz daha açık gri */
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.8), 0 0 0 0.2rem rgba(100,100,100,0.2); /* Odakta hafif dış parlama */
+            outline: none;
+        }
+
+        /* Checkbox Stilleri */
+        .login-container .checkbox.mb-3 { /* Checkbox div'ini hedef al */
+            margin-top: 25px;
+            margin-bottom: 40px !important; /* mb-3'ü geçersiz kılmak için !important */
+            display: flex;
+            align-items: center;
+            color: #b0a08e;
+        }
+        .login-container .checkbox.mb-3 input {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            accent-color: #800000; /* Checkbox rengi */
+        }
+        .login-container .checkbox.mb-3 label {
+            font-weight: normal;
+            font-size: 1em;
+            text-shadow: none;
+            margin-bottom: 0; /* Label'ın kendi margin'ini sıfırla */
+        }
+
+        /* Buton Stilleri */
+        .login-container .btn-lg.btn-primary { /* Bootstrap'in btn-lg ve btn-primary class'larına göre hedefleme */
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background-color: #400000; /* Koyu bordo */
+            color: #f0e6d6;
+            border: 2px solid #800000; /* Daha açık bordo kenarlık */
+            border-radius: 0; /* Köşesiz */
+            font-size: 1.3em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.6); /* Daha belirgin gölge */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        .login-container .btn-lg.btn-primary:hover {
+            background-color: #600000; /* Hover'da daha açık bordo */
+            border-color: #a00000;
+            color: #fff;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+        }
+
+        /* Hata ve Bilgi Mesajları (alert sınıfları) */
+        .login-container .alert {
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 0; /* Köşesiz */
+            color: #f0e6d6;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .login-container .alert-danger {
+            background-color: #8b0000; /* Koyu kırmızı */
+            border: 1px solid #b22222; /* Ateş tuğlası kırmızısı kenarlık */
+        }
+        .login-container .alert-info { /* app.user olduğunda gösterilen mesaj */
+            background-color: #2f4f4f; /* Koyu deniz yeşili */
+            border: 1px solid #4682b4; /* Çelik mavisi kenarlık */
+        }
+        .login-container .alert-info a {
+            color: #d4c2a6; /* Link rengi */
+            text-decoration: underline;
+        }
+        .login-container .alert-info a:hover {
+            color: #fff;
+        }
+
+    </style>
+
+    <div class="login-container">
+        <form method="post" action="{{ path('app_login') }}">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            {% if app.user %}
+                <div class="mb-3 alert alert-info">
+                    Zaten {{ app.user.userIdentifier }} olarak giriş yaptınız. <a href="{{ path('app_logout') }}">Çıkış Yap</a>
+                </div>
+            {% endif %}
+
+            <h1>Giriş Yap</h1> {# Başlığı güncelledik #}
+            <label for="inputEmail">Email</label>
+            <input type="email" value="{{ last_username|default('') }}" name="_username" id="inputEmail" class="form-control" autocomplete="email" required autofocus> {# last_username için default filtre ekledik #}
+
+            <label for="inputPassword">Şifre</label>
+            <input type="password" name="_password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> Beni Hatırla
+                </label>
             </div>
-        {% endif %}
 
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail">Email</label>
-        <input type="email" value="{{ last_username }}" name="_username" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-        <label for="inputPassword">Password</label>
-        <input type="password" name="_password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-        <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-
-        <button class="btn btn-lg btn-primary" type="submit">
-            Sign in
-        </button>
-    </form>
+            <button class="btn btn-lg btn-primary" type="submit">
+                Giriş Yap
+            </button>
+        </form>
+    </div>
 {% endblock %}

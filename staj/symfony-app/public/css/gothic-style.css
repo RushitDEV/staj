@@ -793,3 +793,6 @@
 .text-danger {
     color: var(--gothic-red) !important;
 }
+
+.register-container {color: black
+}

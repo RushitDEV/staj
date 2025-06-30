@@ -1,85 +1,161 @@
-{# templates/registration/register.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Kayıt Ol{% endblock %}
+{% block title %}Kayıt Ol - Dark Arts Atelier{% endblock %}
 
-{% block content %} {# Bu block adı base.html.twig ile uyumlu olmalı #}
+{% block content %}
     <style>
-        /* Gothic Stillerinizi buraya taşıyabilirsiniz veya ayrı bir CSS dosyasına ekleyebilirsiniz */
+        /* Genel Arka Plan ve Metin Rengi */
+        body {
+            background-color: #0d0d0d; /* Daha koyu, kömür siyahı */
+            color: #b0a08e; /* Eskitilmiş kağıt tonu */
+            font-family: 'Georgia', serif; /* Klasik, ağırbaşlı serif font */
+        }
+
+        /* Konteyner Stilleri */
         .register-container {
             max-width: 500px;
-            margin: 50px auto;
-            padding: 30px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            background-color: #fff;
+            margin: 60px auto; /* Biraz daha dikey boşluk */
+            padding: 40px;
+            border: 2px solid #333; /* Koyu gri, sağlam kenarlık */
+            border-radius: 0; /* Köşeleri keskin tut */
+            box-shadow: 0 0 25px rgba(0,0,0,0.8); /* Daha yoğun ve yaygın gölge */
+            background: linear-gradient(to bottom, #1c1c1c, #111111); /* Hafif gradyanlı koyu arka plan */
+            position: relative;
+            overflow: hidden;
+            /* Hafif tekstür efekti için */
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgPHBhdGggZmlsbD0iIzMzMyIgZD0iTTAgMGgyMHYyMEgwVjB6TTUgNWgxMHYxMEg1VjV6IiBvcGFjaXR5PSIwLjAxIi8+CiAgPC9nPgogPC9zdmc+');
+            background-repeat: repeat;
         }
+
+        /* Başlık Stilleri */
         .register-container h1 {
             text-align: center;
-            margin-bottom: 30px;
-            color: #333;
+            margin-bottom: 45px;
+            color: #d4c2a6; /* Soluk altın tonu */
+            font-family: 'MedievalSharp', cursive; /* Gotik el yazısı font - Eğer yüklüyse */
+            font-size: 2.8em; /* Daha da büyük başlık */
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.9); /* Çok derin gölge */
+            letter-spacing: 3px;
+            text-transform: uppercase; /* Başlığı tamamen büyük harf yap */
+            border-bottom: 1px dashed #555; /* Kesik çizgi altı */
+            padding-bottom: 20px;
         }
+
+        /* Form Grupları */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
+
+        /* Etiketler */
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
+            margin-bottom: 10px;
+            font-weight: normal; /* Daha az kalın */
+            color: #c9bdae; /* Metinle uyumlu daha açık ton */
+            font-size: 1.2em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            text-transform: capitalize; /* İlk harfi büyük yap */
         }
+
+        /* Giriş Alanları */
         .form-control {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box; /* Ensures padding doesn't add to the width */
+            padding: 14px;
+            border: 1px solid #444; /* Koyu gri kenarlık */
+            border-radius: 0; /* Köşesiz */
+            box-sizing: border-box;
+            background-color: #222; /* Kömür rengi arka plan */
+            color: #f0e6d6; /* Açık metin rengi */
+            font-size: 1.1em;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.8); /* Daha belirgin iç gölge */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
+        .form-control:focus {
+            border-color: #888; /* Odakta biraz daha açık gri */
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.8), 0 0 0 0.2rem rgba(100,100,100,0.2); /* Odakta hafif dış parlama */
+            outline: none;
+        }
+        .form-control::placeholder { /* Placeholder metin rengi */
+            color: #666;
+            font-style: italic;
+        }
+
+
+        /* Buton Stilleri */
         .btn-primary {
             display: block;
             width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
+            padding: 18px;
+            background-color: #400000; /* Koyu bordo */
+            color: #f0e6d6;
+            border: 2px solid #800000; /* Daha açık bordo kenarlık */
+            border-radius: 0; /* Köşesiz */
+            font-size: 1.3em;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.6); /* Daha belirgin gölge */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
         .btn-primary:hover {
-            background-color: #0056b3;
+            background-color: #600000; /* Hover'da daha açık bordo */
+            border-color: #a00000;
+            color: #fff;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.8);
         }
+
+        /* Checkbox Stilleri */
         .form-check {
-            margin-top: 15px;
+            margin-top: 25px;
+            margin-bottom: 40px;
             display: flex;
             align-items: center;
+            color: #b0a08e;
         }
         .form-check input {
-            margin-right: 10px;
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            accent-color: #800000; /* Checkbox rengi */
         }
+        .form-check label { /* Checkbox label'ı için ekstra stil */
+            font-weight: normal;
+            font-size: 1em;
+            text-shadow: none;
+        }
+
+        /* Hata ve Başarı Mesajları */
         .form-error {
-            color: red;
-            font-size: 0.9em;
-            margin-top: 5px;
+            color: #ff4500; /* Daha canlı turuncu-kırmızı hata rengi */
+            font-size: 0.95em;
+            margin-top: 10px;
+            font-style: italic;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         .flash-messages {
             list-style: none;
             padding: 0;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
         .flash-messages li {
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 4px;
-            color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0; /* Köşesiz */
+            color: #f0e6d6;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         .flash-messages li.success {
-            background-color: #28a745; /* Green for success */
+            background-color: #2f4f4f; /* Koyu deniz yeşili */
+            border: 1px solid #4682b4; /* Çelik mavisi kenarlık */
         }
         .flash-messages li.error {
-            background-color: #dc3545; /* Red for error */
+            background-color: #8b0000; /* Koyu kırmızı */
+            border: 1px solid #b22222; /* Ateş tuğlası kırmızısı kenarlık */
         }
     </style>
 
@@ -97,39 +173,41 @@
             </ul>
         {% endfor %}
 
-        {{ form_errors(registrationForm) }}
+        {% if form_errors(registrationForm) %}
+            <div class="alert alert-danger form-error">
+                {{ form_errors(registrationForm) }}
+            </div>
+        {% endif %}
 
         {{ form_start(registrationForm) }}
         <div class="form-group">
             {{ form_label(registrationForm.email) }}
-            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
-            {{ form_errors(registrationForm.email) }}
+            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email Adresiniz'}}) }}
+            {{ form_errors(registrationForm.email, {'attr': {'class': 'form-error'}}) }}
         </div>
 
-        {# USERNAME ALANINI BURADA AKTİF EDİYORUZ #}
         <div class="form-group">
             {{ form_label(registrationForm.username) }}
-            {{ form_widget(registrationForm.username, {'attr': {'class': 'form-control'}}) }}
-            {{ form_errors(registrationForm.username) }}
+            {{ form_widget(registrationForm.username, {'attr': {'class': 'form-control', 'placeholder': 'Kullanıcı Adınız'}}) }}
+            {{ form_errors(registrationForm.username, {'attr': {'class': 'form-error'}}) }}
         </div>
 
-        {# FULLNAME ALANINI BURADA AKTİF EDİYORUZ #}
         <div class="form-group">
             {{ form_label(registrationForm.fullName) }}
-            {{ form_widget(registrationForm.fullName, {'attr': {'class': 'form-control'}}) }}
-            {{ form_errors(registrationForm.fullName) }}
+            {{ form_widget(registrationForm.fullName, {'attr': {'class': 'form-control', 'placeholder': 'Adınız Soyadınız'}}) }}
+            {{ form_errors(registrationForm.fullName, {'attr': {'class': 'form-error'}}) }}
         </div>
 
         <div class="form-group">
             {{ form_label(registrationForm.plainPassword) }}
-            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
-            {{ form_errors(registrationForm.plainPassword) }}
+            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Şifreniz'}}) }}
+            {{ form_errors(registrationForm.plainPassword, {'attr': {'class': 'form-error'}}) }}
         </div>
 
         <div class="form-check">
             {{ form_widget(registrationForm.agreeTerms) }}
-            {{ form_label(registrationForm.agreeTerms) }}
-            {{ form_errors(registrationForm.agreeTerms) }}
+            {{ form_label(registrationForm.agreeTerms, 'Şartları kabul ediyorum.') }}
+            {{ form_errors(registrationForm.agreeTerms, {'attr': {'class': 'form-error'}}) }}
         </div>
 
         <button type="submit" class="btn btn-primary">Kayıt Ol</button>
