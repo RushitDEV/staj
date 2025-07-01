@@ -2,14 +2,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    {# Ana başlık bloğunu çeviri anahtarı ile güncelliyoruz #}
+    <title>{% block title %}{{ 'app_title'|trans }}{% endblock %}</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-    <meta name="description" content="Gotik sanatın mistik dünyasından evinize karanlık güzellik. El yapımı gotik ürünler, takılar ve dekorasyon.">
-    <meta name="keywords" content="gotik, gothic, el yapımı, handmade, etsy, sanat, takı, dekorasyon, mistik">
-    <meta name="author" content="Dark Arts Atelier">
 
-    <meta property="og:title" content="{{ site_title }}">
-    <meta property="og:description" content="Gotik sanatın mistik dünyasından evinize karanlık güzellik getiriyoruz.">
+    {# Açıklama, anahtar kelimeler ve yazar meta etiketleri de çevirilebilir olmalı. #}
+    {# Şimdilik statik kalabilir, ancak ilerde bunları da çevirmenizi öneririm. #}
+    <meta name="description" content="{{ 'site_description'|trans }}"> {# Yeni çeviri anahtarı #}
+    <meta name="keywords" content="{{ 'site_keywords'|trans }}">     {# Yeni çeviri anahtarı #}
+    <meta name="author" content="{{ 'site_author'|trans }}">       {# Yeni çeviri anahtarı #}
+
+    {# Open Graph başlığını da çeviri anahtarı ile güncelliyoruz #}
+    <meta property="og:title" content="{{ 'app_title'|trans }}">
+    <meta property="og:description" content="{{ 'site_og_description'|trans }}"> {# Yeni çeviri anahtarı #}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ 'http://' ~ app.request.host }}">
 
@@ -23,7 +28,7 @@
 {% include 'partials/header.html.twig' %}
 
 <main>
-    {% block content %}{% endblock %} {# BURASI BOŞ KALMALI, HİÇBİR İÇERİK OLMAMALI #}
+    {% block content %}{% endblock %}
 </main>
 
 {% include 'partials/footer.html.twig' %}

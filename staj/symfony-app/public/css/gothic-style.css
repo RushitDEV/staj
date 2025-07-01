@@ -876,3 +876,58 @@
     border-color: #f0d0ff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.6);
 }
+
+/* Sadece dil değiştirme nav-link'leri için özelleştirmeler */
+.navbar-nav .nav-item .nav-link {
+    /* Bu stil genel nav-link'ler için, ancak dil butonları da bundan etkilenecektir. */
+    /* Zaten Bootstrap'in varsayılan padding, color vb. özelliklerini kullanacaktır. */
+    /* Genel menü öğeleriyle uyumu için font-family'yi buradan kaldırıyoruz, */
+    /* eğer header.html.twig veya genel menü stillerinizde farklı bir font varsa. */
+    /* Eğer tüm menü aynı fontu kullanıyorsa, bu kısmı bırakabilirsiniz. */
+    /* font-family: 'Butcherman', cursive; */
+    font-size: 0.95em; /* Yazı boyutu */
+    letter-spacing: 0.5px; /* Harfler arası hafif boşluk */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); /* Hafif metin gölgesi */
+    transition: all 0.3s ease; /* Tüm geçişlere yumuşaklık */
+    border-radius: 4px; /* Hafif yuvarlak köşeler */
+    box-sizing: border-box;
+}
+
+/* Dil butonlarına özel arka plan ve kenarlık */
+.navbar-nav .nav-item .nav-link[href*="/tr/"],
+.navbar-nav .nav-item .nav-link[href*="/en/"] {
+    background-color: rgba(51, 0, 51, 0.7); /* Koyu morun biraz şeffaf hali */
+    border: 1px solid rgba(106, 0, 106, 0.6); /* Morumsu kenarlık */
+    color: #f0e6f6; /* Açık morumsu beyaz metin rengi */
+    margin-left: 5px; /* Yan yana duran butonlar arasında boşluk */
+    margin-right: 5px;
+    padding: 6px 10px; /* Daha kompakt butonlar */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Daha hafif dış gölge */
+}
+
+/* Dil butonlarının hover efekti */
+.navbar-nav .nav-item .nav-link[href*="/tr/"]:hover,
+.navbar-nav .nav-item .nav-link[href*="/en/"]:hover {
+    background-color: #6a006a; /* Üzerine gelince daha belirgin mor */
+    border-color: #ff004c; /* Gotik kırmızı kenarlık */
+    color: #ffffff; /* Metin rengini beyaza çevir */
+    box-shadow: 0 0 8px rgba(255, 0, 76, 0.4); /* Parlak dış gölge */
+    cursor: pointer;
+}
+
+/* Aktif dil butonu (TR veya EN) */
+.navbar-nav .nav-item .nav-link.active {
+    background-color: #8B0000; /* Koyu kırmızı arka plan */
+    border-color: #ff004c; /* Gotik kırmızı kenarlık */
+    color: #ffffff; /* Beyaz metin */
+    font-weight: bold; /* Kalın metin */
+    box-shadow: 0 0 10px rgba(255, 0, 76, 0.7); /* Daha belirgin gölge */
+    pointer-events: none; /* Aktif olanın tıklanmasını engeller */
+    cursor: default;
+}
+
+/* Eğer genel nav-link'lerinizde arka plan ve kenarlık varsa, bu kısımlar çakışabilir. */
+/* Diğer menü öğelerinin stiline uyum sağlamak için şunları düşünebilirsiniz: */
+/* Eğer menü öğeleriniz (ETSY, GİRİŞ, KAYIT) zaten arka plan renklerine sahipse, */
+/* .nav-link[href*="/tr/"] ve .nav-link[href*="/en/"] kısımlarına eklediğimiz */
+/* background-color ve border stillerini diğer butonlarınızdaki stillerle eşleştirin. */

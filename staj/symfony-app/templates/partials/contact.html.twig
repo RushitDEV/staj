@@ -3,21 +3,21 @@
         <div class="text-center mb-5">
             <div class="d-flex align-items-center justify-content-center mb-4">
                 <i class="fas fa-flame gothic-section-icon text-danger me-3"></i>
-                <h2 class="gothic-section-title gothic-gradient-text mb-0">Karanlık Portal</h2>
+                <h2 class="gothic-section-title gothic-gradient-text mb-0">{{ 'contact_section_title'|trans }}</h2>
                 <i class="fas fa-flame gothic-section-icon text-danger ms-3"></i>
             </div>
-            <p class="gothic-section-subtitle">Ruhunuzdan geçenleri bizimle paylaşın</p>
+            <p class="gothic-section-subtitle">{{ 'contact_section_subtitle'|trans }}</p>
         </div>
 
         {% if success_message %}
             <div class="alert gothic-alert-success" role="alert">
-                <i class="fas fa-check-circle me-2"></i>{{ success_message }}
+                <i class="fas fa-check-circle me-2"></i>{{ 'success_message_prefix'|trans }} {{ success_message }}
             </div>
         {% endif %}
 
         {% if error_message %}
             <div class="alert gothic-alert-danger" role="alert">
-                <i class="fas fa-exclamation-triangle me-2"></i>{{ error_message }}
+                <i class="fas fa-exclamation-triangle me-2"></i>{{ 'error_message_prefix'|trans }} {{ error_message }}
             </div>
         {% endif %}
 
@@ -25,30 +25,30 @@
             <div class="col-lg-6">
                 <div class="gothic-contact-form">
                     <h3 class="gothic-form-title mb-4">
-                        <i class="fas fa-comment-dots me-2"></i>Karanlık Mesajınız
+                        <i class="fas fa-comment-dots me-2"></i>{{ 'contact_form_title'|trans }}
                     </h3>
 
                     <form method="POST" action="/">
                         <div class="mb-3">
-                            <label for="name" class="form-label gothic-form-label">Karanlık Adınız</label>
+                            <label for="name" class="form-label gothic-form-label">{{ 'form_label_name'|trans }}</label>
                             <input type="text" class="form-control gothic-form-control" id="name" name="name"
-                                   placeholder="Ruhunuzun adı..." required>
+                                   placeholder="{{ 'placeholder_name'|trans }}" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="email" class="form-label gothic-form-label">Mistik Portal (E-posta)</label>
+                            <label for="email" class="form-label gothic-form-label">{{ 'form_label_email'|trans }}</label>
                             <input type="email" class="form-control gothic-form-control" id="email" name="email"
-                                   placeholder="ruhunuz@karanlık.com" required>
+                                   placeholder="{{ 'placeholder_email'|trans }}" required>
                         </div>
 
                         <div class="mb-4">
-                            <label for="message" class="form-label gothic-form-label">Karanlık Düşünceleriniz</label>
+                            <label for="message" class="form-label gothic-form-label">{{ 'form_label_message'|trans }}</label>
                             <textarea class="form-control gothic-form-control" id="message" name="message" rows="5"
-                                      placeholder="Ruhunuzdan geçenleri yazın..." required></textarea>
+                                      placeholder="{{ 'placeholder_message'|trans }}" required></textarea>
                         </div>
 
                         <button type="submit" class="btn gothic-btn-primary w-100">
-                            <i class="fas fa-flame me-2"></i>Karanlığa Gönder
+                            <i class="fas fa-flame me-2"></i>{{ 'send_to_darkness_button'|trans }}
                         </button>
                     </form>
                 </div>
@@ -57,13 +57,13 @@
             <div class="col-lg-6">
                 <div class="gothic-contact-info">
                     <h3 class="gothic-form-title mb-4">
-                        <i class="fas fa-eye me-2"></i>Karanlık Bağlantı
+                        <i class="fas fa-eye me-2"></i>{{ 'contact_info_title'|trans }}
                     </h3>
 
                     <div class="gothic-contact-item">
                         <i class="fas fa-envelope gothic-contact-icon"></i>
                         <div>
-                            <h5>Mistik Portal</h5>
+                            <h5>{{ 'mystic_portal_title'|trans }}</h5>
                             <p>gothizen@gmail.com</p>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                     <div class="gothic-contact-item">
                         <i class="fas fa-phone gothic-contact-icon"></i>
                         <div>
-                            <h5>Karanlık Hat</h5>
+                            <h5>{{ 'dark_line_title'|trans }}</h5>
                             <p>+905519579100</p>
                         </div>
                     </div>
@@ -79,14 +79,14 @@
                     <div class="gothic-contact-item">
                         <i class="fas fa-map-marker-alt gothic-contact-icon"></i>
                         <div>
-                            <h5>Karanlık Atölye</h5>
-                            <p>Ankara, Türkiye</p>
+                            <h5>{{ 'dark_workshop_title'|trans }}</h5>
+                            <p>{{ 'location_ankara_turkey'|trans }}</p>
                         </div>
                     </div>
 
                     <div class="gothic-social-section mt-4">
                         <h4 class="gothic-social-title">
-                            <i class="fas fa-crown me-2"></i>Karanlık Ağ
+                            <i class="fas fa-crown me-2"></i>{{ 'dark_web_title'|trans }}
                         </h4>
                         <div class="gothic-social-links">
                             <a href="https://instagram.com/yourshop" target="_blank" class="gothic-social-link">
@@ -103,11 +103,11 @@
 
                     <div class="gothic-hours-section mt-4">
                         <h4 class="gothic-hours-title">
-                            <i class="fas fa-moon me-2"></i>Karanlık Saatler
+                            <i class="fas fa-moon me-2"></i>{{ 'dark_hours_title'|trans }}
                         </h4>
-                        <p class="gothic-hours-text">Pazartesi - Cuma: 18:00 - 24:00</p>
-                        <p class="gothic-hours-text">Hafta Sonu: 20:00 - 02:00</p>
-                        <p class="gothic-hours-note">*Gece karanlığında daha yaratıcıyız</p>
+                        <p class="gothic-hours-text">{{ 'hours_weekday'|trans }}</p>
+                        <p class="gothic-hours-text">{{ 'hours_weekend'|trans }}</p>
+                        <p class="gothic-hours-text">{{ 'hours_note'|trans }}</p>
                     </div>
                 </div>
             </div>

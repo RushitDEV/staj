@@ -1,11 +1,14 @@
 # config/routes.yaml
 
-# Controller'lardaki #[Route] niteliklerini otomatik olarak yükle
 app_controllers:
     resource: '../src/Controller/'
     type: attribute
+    prefix: /{_locale}
+    requirements:
+        _locale: en|tr
+    defaults:
+        _locale: '%kernel.default_locale%'
 
-# config/routes/ klasöründeki diğer tüm route dosyalarını içe aktar (örneğin framework.yaml)
 _import_extra_routes:
     resource: './routes/'
     type: directory

@@ -1,0 +1,122 @@
+# translations/messages.tr.yaml
+
+# Header link çevirileri
+header_link_collection: 'Karanlık Koleksiyon'
+header_link_story: 'Hikayemiz'
+header_link_reviews: 'Ruhlar Konuşuyor'
+header_link_contact: 'Karanlık Portal'
+header_link_etsy_shop: 'ETSY MAĞAZASI'
+header_link_login: 'Giriş Yap'
+header_link_register: 'Kayıt Ol'
+header_link_logout: 'Çıkış Yap'
+
+# About Section
+about_section_title: Hakkımızda
+about_text_part1: "Kendimizi %years% yıldır karanlık sanatlara adadık. Eserlerimizin her birinde kadim bilginin ve gotik estetiğin izlerini bulacaksınız."
+about_text_part2: "Her bir parça titizlikle hazırlanmış ve asırlar süren birikmiş bilgelikle harmanlanmıştır. Koleksiyonumuz, tarihin derinliklerinden gizemli güzellikleri modern dünyaya taşıyor."
+years_dark_art: Yıllık Karanlık Sanat Deneyimi
+handmade_magic: El Yapımı Büyü
+mystic_workshop: Mistik Atölye
+
+# Contact Section
+contact_section_title: Karanlık Portal
+contact_section_subtitle: "Ruhunuzdaki düşünceleri bizimle paylaşın"
+contact_form_title: Karanlık Mesajınız
+your_dark_message: Karanlık Mesajınız
+
+# Form Labels and Placeholders
+form_label_name: Karanlık Adınız
+placeholder_name: "Ruhunuzun adı..."
+form_label_email: Mistik Portal (E-posta)
+placeholder_email: "ruhunuz@karanlik.com"
+form_label_message: Karanlık Düşünceleriniz
+placeholder_message: "Ruhunuzdaki düşünceleri yazın..."
+send_to_darkness_button: Karanlığa Gönder
+
+# Contact Information
+contact_info_title: Karanlık Bağlantı
+mystic_portal_title: Mistik Portal
+dark_line_title: Karanlık Hat
+dark_workshop_title: Karanlık Atölye
+location_ankara_turkey: Ankara, Türkiye
+
+# Social Media
+dark_web_title: Karanlık Ağ
+
+# Working Hours
+dark_hours_title: Karanlık Saatler
+hours_weekday: 'Pazartesi - Cuma: 18:00 - 24:00'
+hours_weekend: 'Hafta Sonu: 20:00 - 02:00'
+hours_note: '*Gecenin karanlığında daha yaratıcıyız'
+
+# Footer Section
+footer_description_part1: Gotik sanatın mistik dünyasından karanlık güzellikleri evinize getiriyoruz.
+footer_description_part2: Her parça ruhunuza dokunma gücüyle yaratılmıştır.
+footer_heading_dark_paths: Karanlık Yollar
+footer_link_collection: Karanlık Koleksiyon
+footer_link_story: Hikayemiz
+footer_link_reviews: Ruhlar Konuşur
+footer_link_contact: Karanlık Portal
+footer_heading_dark_follow: Karanlık Takip
+footer_copyright: 'Tüm karanlık hakları saklıdır.'
+footer_quote: '"Karanlıkta yaratılan sanat, ruha en derin şekilde dokunur."'
+
+# Hero Section
+hero_subtitle: Karanlık Sanatlar Atölyesi
+hero_title: Gotik Sanatın Mistik Dünyası
+hero_description: "🎃 Gothizen'e Hoş Geldiniz! Karanlık Zarafetin Gotik Modayla Buluştuğu Yer. 🖤 Eşsiz tasarımlarımızla karanlığın cazibesini kucaklayın; cesur, gizemli ve tamamen siz. Her parça bireyselliğinizi yansıtmak ve gölgelerin güzelliğini kutlamak için özenle üretilmiştir. Gizemin keskinlikle buluştuğu ve karanlık estetiğin hüküm sürdüğü koleksiyonumuzu keşfedin."
+hero_button_explore: Karanlık Koleksiyonu Keşfet
+hero_button_etsy: Etsy'de Ziyaret Et
+
+stat_dark_item: Karanlık Ürün
+stat_dark_soul: Karanlık Ruh
+stat_mystic_rating: Mistik Puan
+
+# Products Section
+products_section_title: Karanlık Koleksiyon
+products_section_subtitle: Ruhunuza dokunacak gotik sanat eserleri
+product_overlay_button: Karanlığa Dal
+product_stock_available: Mevcut
+explore_all_products_button: 'Tüm Karanlık Koleksiyonu Keşfet'
+
+# Reviews Section
+reviews_section_title: Ruhlar Konuşuyor
+reviews_section_subtitle: Karanlık ruhların deneyimleri
+review_verified_badge: Doğrulanmış
+review_summary_text: '%total_sales% karanlık ürün, %happy_customers%+ karanlık ruh'
+
+# Kayıt Sayfası
+register_page_title: 'Kayıt Ol'
+register_heading: 'Kayıt Ol'
+register_email_label: 'E-posta Adresi'
+register_username_label: 'Kullanıcı Adı'
+register_fullname_label: 'Adınız Soyadınız'
+register_password_label: 'Şifre'
+register_agree_terms: 'Şartları kabul ediyorum.'
+register_button_text: 'Kayıt Ol'
+
+# Yer Tutucular (Kayıt/Giriş) - SADECE TÜRKÇE ÇEVİRİLERİ OLMALI!
+placeholder_email_register: 'E-posta Adresiniz'
+placeholder_username: 'Kullanıcı Adınız'
+placeholder_fullname: 'Adınız Soyadınız'
+placeholder_password_register: 'Şifreniz'
+
+# Giriş Sayfası
+login_page_title: 'Giriş Yap'
+login_heading: 'Karanlık Bölgenize Giriş Yapın'
+login_email_label: 'E-posta'
+login_password_label: 'Şifre'
+login_forgot_password: 'Şifrenizi mi Unuttunuz?'
+login_button_text: 'Karanlığa Gir'
+login_already_logged_in: 'Zaten %user% olarak giriş yaptınız.'
+logout_link: 'Çıkış Yap'
+login_remember_me: 'Beni Hatırla'
+login_no_account_prompt: "Hesabınız yok mu?"
+login_register_link: 'Buradan Kaydolun'
+
+# translations/messages.tr.yaml
+app_title: Karanlık Sanatlar Atölyesi - Gotik El Yapımı Sanat
+site_description: Gotik sanatın mistik dünyasından evinize karanlık güzellik getiriyoruz. El yapımı gotik ürünler, takılar ve dekorasyon.
+site_keywords: gotik, gothic, el yapımı, handmade, etsy, sanat, takı, dekorasyon, mistik
+site_author: Dark Arts Atelier
+site_og_description: Gotik sanatın mistik dünyasından evinize karanlık güzellik getiriyoruz.

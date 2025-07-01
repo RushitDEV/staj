@@ -1,0 +1,122 @@
+# translations/messages.en.yaml
+
+# Header link çevirileri
+header_link_collection: 'Dark Collection'
+header_link_story: 'Our Story'
+header_link_reviews: 'Reviews'
+header_link_contact: 'Contact'
+header_link_etsy_shop: 'ETSY SHOP'
+header_link_login: 'Login'
+header_link_register: 'Register'
+header_link_logout: 'Logout'
+
+# About Section
+about_section_title: About Us
+about_text_part1: "We have dedicated ourselves to the dark arts for over %years% years. In each of our works, you will find traces of ancient knowledge and gothic aesthetics."
+about_text_part2: "Every piece is crafted with meticulous care and blended with centuries of accumulated wisdom. Our collection brings mysterious beauties from the depths of history into the modern world."
+years_dark_art: Years of Dark Art Experience
+handmade_magic: Handmade Magic
+mystic_workshop: Mystic Workshop
+
+# Contact Section
+contact_section_title: Dark Portal
+contact_section_subtitle: "Share what's on your soul with us" # Tek tırnak hatası olmaması için
+contact_form_title: Your Dark Message
+your_dark_message: Your Dark Message
+
+# Form Labels and Placeholders
+form_label_name: Your Dark Name
+placeholder_name: "Name of your soul..." # Tek tırnak hatası olmaması için
+form_label_email: Mystic Portal (Email)
+placeholder_email: "yoursoul@darkness.com" # Burası doğru İngilizce değeri
+form_label_message: Your Dark Thoughts
+placeholder_message: "Write what's on your soul..." # Tek tırnak hatası olmaması için
+send_to_darkness_button: Send to Darkness
+
+# Contact Information
+contact_info_title: Dark Connection
+mystic_portal_title: Mystic Portal
+dark_line_title: Dark Line
+dark_workshop_title: Dark Workshop
+location_ankara_turkey: Ankara, Turkey
+
+# Social Media
+dark_web_title: Dark Web
+
+# Working Hours
+dark_hours_title: Dark Hours
+hours_weekday: 'Monday - Friday: 18:00 - 24:00'
+hours_weekend: 'Weekend: 20:00 - 02:00'
+hours_note: '*We are more creative in the darkness of night'
+
+# Footer Section
+footer_description_part1: We bring dark beauty from the mystic world of gothic art to your home.
+footer_description_part2: Each piece is created with the power to touch your soul.
+footer_heading_dark_paths: Dark Paths
+footer_link_collection: Dark Collection
+footer_link_story: Our Story
+footer_link_reviews: Souls Speak
+footer_link_contact: Dark Portal
+footer_heading_dark_follow: Dark Follow
+footer_copyright: 'All dark rights reserved.'
+footer_quote: '"Art created in darkness touches the soul most deeply."'
+
+# Hero Section
+hero_subtitle: The Art Workshop of Darkness
+hero_title: The Mystic World of Gothic Art
+hero_description: "🎃 Welcome to Gothizen! Where Dark Elegance Meets Gothic Fashion. 🖤 Embrace the allure of darkness with our unique designs; bold, mysterious, and entirely you. Each piece is meticulously crafted to reflect your individuality and celebrate the beauty of shadows. Discover our collection where enigma meets edge, and dark aesthetics reign supreme."
+hero_button_explore: Explore the Dark Collection
+hero_button_etsy: Visit on Etsy
+
+stat_dark_item: Dark Item
+stat_dark_soul: Dark Soul
+stat_mystic_rating: Mystic Rating
+
+# Products Section
+products_section_title: Dark Collection
+products_section_subtitle: Gothic artworks to touch your soul
+product_overlay_button: Dive into Darkness
+product_stock_available: Available
+explore_all_products_button: 'Explore All Dark Collection'
+
+# Reviews Section
+reviews_section_title: Souls Speak
+reviews_section_subtitle: Experiences of dark souls
+review_verified_badge: Verified
+review_summary_text: '%total_sales% dark items, %happy_customers%+ dark souls'
+
+# Register Page (Kayıt Sayfası) - SADECE İNGİLİZCE ÇEVİRİLERİ OLMALI!
+register_page_title: 'Register'
+register_heading: 'Register'
+register_email_label: 'Email Address'
+register_username_label: 'Username'
+register_fullname_label: 'Full Name'
+register_password_label: 'Password'
+register_agree_terms: 'I agree to the terms and conditions.'
+register_button_text: 'Register'
+
+# Placeholders for Register/Login - SADECE İNGİLİZCE ÇEVİRİLERİ OLMALI!
+placeholder_email_register: 'Your Email Address' # Farklı bir anahtar adı kullandık karışmasın diye
+placeholder_username: 'Your Username'
+placeholder_fullname: 'Your Full Name'
+placeholder_password_register: 'Your Password' # Farklı bir anahtar adı kullandık karışmasın diye
+
+# Login Page (Giriş Sayfası) - SADECE İNGİLİZCE ÇEVİRİLERİ OLMALI!
+login_page_title: 'Login'
+login_heading: 'Login' # Veya 'Login to Your Dark Realm'
+login_email_label: 'Email'
+login_password_label: 'Password'
+login_forgot_password: 'Forgot your password?'
+login_button_text: 'Log In'
+login_already_logged_in: 'You are already logged in as %user%.'
+logout_link: 'Logout'
+login_remember_me: 'Remember me'
+login_no_account_prompt: "Don't have an account?"
+login_register_link: 'Register Here'
+
+# translations/messages.en.yaml
+app_title: Dark Arts Atelier - Gothic Handmade Art
+site_description: We bring dark beauty from the mystical world of gothic art to your home. Handmade gothic products, jewelry, and decoration.
+site_keywords: gothic, handmade, etsy, art, jewelry, decoration, mystical
+site_author: Dark Arts Atelier
+site_og_description: We bring dark beauty from the mystical world of gothic art to your home.

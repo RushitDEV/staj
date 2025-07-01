@@ -39,10 +39,10 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_login'); // Kayıt sonrası login sayfasına yönlendir
         }
 
-        // Twig şablonunu render ederken site_title değişkenini gönder
+        // Twig şablonunu render ederken artık site_title değişkenini göndermiyoruz.
+        // Çünkü register.html.twig içindeki {% block title %} zaten çeviri anahtarını kullanıyor.
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
-            'site_title' => 'Dark Arts Atelier - Kayıt Ol', // <-- Bu satırı ekledim
         ]);
     }
 }

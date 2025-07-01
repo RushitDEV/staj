@@ -4,18 +4,18 @@
             <div class="col-lg-6">
                 <div class="d-flex align-items-center mb-4">
                     <i class="fas fa-moon gothic-section-icon text-purple me-3"></i>
-                    <h2 class="gothic-section-title gothic-gradient-text mb-0">Karanlık Hikayemiz</h2>
+                    {# about_section_title anahtarını kullanıyor #}
+                    <h2 class="gothic-section-title gothic-gradient-text mb-0">{{ 'about_section_title'|trans }}</h2>
                 </div>
 
                 <p class="gothic-about-text mb-4">
-                    {{ stats.years_experience }} yıl önce, gotik sanatın mistik dünyasına adım attığımda,
-                    her eserin bir ruh taşıdığını keşfettim. Karanlığın derinliklerinden ilham alarak,
-                    her parçayı özenle yaratıyorum.
+                    {# about_text_part1 anahtarını kullanıyor ve %years% değişkenini doğru aktarıyor #}
+                    {{ 'about_text_part1'|trans({'%years%': stats.years_experience}) }}
                 </p>
 
                 <p class="gothic-about-text mb-5">
-                    Amacım, evinize sadece dekorasyon değil, bir atmosfer katmak.
-                    Her eser, gotik estetiğin gücünü ve karanlığın güzelliğini yansıtıyor.
+                    {# about_text_part2 anahtarını kullanıyor #}
+                    {{ 'about_text_part2'|trans }}
                 </p>
 
                 <div class="row">
@@ -23,14 +23,16 @@
                         <div class="gothic-about-stat">
                             <i class="fas fa-skull gothic-stat-icon text-danger"></i>
                             <div class="gothic-stat-number text-danger">{{ stats.years_experience }}</div>
-                            <div class="gothic-stat-label">Yıl Karanlık Sanat</div>
+                            {# years_dark_art anahtarını kullanıyor #}
+                            <div class="gothic-stat-label">{{ 'years_dark_art'|trans }}</div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="gothic-about-stat">
                             <i class="fas fa-crown gothic-stat-icon text-purple"></i>
                             <div class="gothic-stat-number text-purple">100%</div>
-                            <div class="gothic-stat-label">El Yapımı Büyü</div>
+                            {# handmade_magic anahtarını kullanıyor #}
+                            <div class="gothic-stat-label">{{ 'handmade_magic'|trans }}</div>
                         </div>
                     </div>
                 </div>
@@ -42,7 +44,8 @@
 
                     <div class="gothic-floating-badge gothic-workshop-badge">
                         <i class="fas fa-eye text-danger"></i>
-                        <span>Mistik Atölye</span>
+                        {# mystic_workshop anahtarını kullanıyor #}
+                        <span>{{ 'mystic_workshop'|trans }}</span>
                     </div>
                 </div>
             </div>

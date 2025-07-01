@@ -4,6 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+    kernel.default_locale: '%env(APP_LOCALE)%'
 
 services:
     # default configuration for services in *this* file
@@ -15,6 +16,13 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+            # - '../src/EventListener/' # Eğer bu satır varsa YORUM SATIRI YAPIN veya SİLİN.
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    # LocaleListener'ı bir servis olarak tanımlayan kısmı buraya eklemeyin
+    # Daha önce bunu silmemiz gerektiğini konuşmuştuk.
+    # Eğer bu dosyanızda App\EventListener\LocaleListener ile başlayan bir blok varsa, onu SİLİN.

@@ -1,13 +1,12 @@
-{# templates/partials/reviews.html.twig #}
 <section id="reviews" class="gothic-reviews py-5">
     <div class="container">
         <div class="text-center mb-5">
             <div class="d-flex align-items-center justify-content-center mb-4">
                 <i class="fas fa-eye gothic-section-icon text-purple me-3"></i>
-                <h2 class="gothic-section-title gothic-gradient-text mb-0">Ruhlar Konuşuyor</h2>
+                <h2 class="gothic-section-title gothic-gradient-text mb-0">{{ 'reviews_section_title'|trans }}</h2>
                 <i class="fas fa-eye gothic-section-icon text-purple ms-3"></i>
             </div>
-            <p class="gothic-section-subtitle">Karanlık ruhların deneyimleri</p>
+            <p class="gothic-section-subtitle">{{ 'reviews_section_subtitle'|trans }}</p>
         </div>
 
         <div class="row g-4">
@@ -16,13 +15,11 @@
                     <div class="gothic-review-card">
                         <div class="gothic-review-header">
                             <div class="gothic-review-avatar">
-                                {# 'customer_name' yerine 'author' kullanıldı #}
-                                <span>{{ review.author|first }}</span>
+                                <span>{{ review.author|first }}</span> {# Yazar adı dinamik, ilk harfi alıyoruz #}
                             </div>
                             <div class="gothic-review-info">
-                                {# 'customer_name' yerine 'author' kullanıldı #}
-                                <h4 class="gothic-review-name">{{ review.author }}</h4>
-                                <p class="gothic-review-date">{{ review.date }}</p>
+                                <h4 class="gothic-review-name">{{ review.author }}</h4> {# Yazar adı dinamik #}
+                                <p class="gothic-review-date">{{ review.date }}</p> {# Tarih dinamik #}
                             </div>
                         </div>
 
@@ -35,15 +32,14 @@
                                 {% endif %}
                             {% endfor %}
 
-                            {# 'verified' anahtarı kontrolü eklendi, HomeController'da bu veriyi gönderdiğimizden emin olun #}
                             {% if review.verified is defined and review.verified %}
                                 <span class="gothic-verified-badge ms-2">
-                                    <i class="fas fa-skull me-1"></i>Doğrulanmış
+                                    <i class="fas fa-skull me-1"></i>{{ 'review_verified_badge'|trans }}
                                 </span>
                             {% endif %}
                         </div>
 
-                        <p class="gothic-review-comment">"{{ review.comment }}"</p>
+                        <p class="gothic-review-comment">"{{ review.comment }}"</p> {# Yorum metni dinamik #}
                     </div>
                 </div>
             {% endfor %}
@@ -52,11 +48,13 @@
         <div class="text-center mt-5">
             <div class="gothic-rating-summary">
                 <i class="fas fa-star text-warning me-2"></i>
-                {# 'stats.average_rating' HomeController'dan geldiği için burada kullanılabilir #}
-                <span class="gothic-rating-number">{{ stats.average_rating }}/5.0</span>
+                <span class="gothic-rating-number">{{ stats.average_rating }}/5.0</span> {# Ortalama puan dinamik #}
                 <span class="gothic-rating-text ms-3">
-                    {# 'stats.total_sales' ve 'stats.happy_customers' HomeController'dan geldiği için burada kullanılabilir #}
-                    {{ stats.total_sales }} karanlık eser, {{ stats.happy_customers }}+ karanlık ruh
+                    {# Değişkenleri çeviriye gönderiyoruz #}
+                    {{ 'review_summary_text'|trans({
+                        '%total_sales%': stats.total_sales,
+                        '%happy_customers%': stats.happy_customers
+                    }) }}
                 </span>
             </div>
         </div>

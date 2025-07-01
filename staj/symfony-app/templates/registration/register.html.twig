@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Kayıt Ol - Dark Arts Atelier{% endblock %}
+{# Başlık bloğunu çeviri anahtarıyla güncelleyin #}
+{% block title %}{{ 'register_page_title'|trans }} - Dark Arts Atelier{% endblock %}
 
 {% block content %}
     <style>
@@ -160,7 +161,8 @@
     </style>
 
     <div class="register-container">
-        <h1>Kayıt Ol</h1>
+        {# h1 başlığını çeviri anahtarıyla güncelleyin #}
+        <h1>{{ 'register_heading'|trans }}</h1>
 
         {% for message in app.flashes('success') %}
             <ul class="flash-messages">
@@ -181,36 +183,41 @@
 
         {{ form_start(registrationForm) }}
         <div class="form-group">
-            {{ form_label(registrationForm.email) }}
-            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email Adresiniz'}}) }}
+            {# form_label için doğrudan çeviri anahtarını gönderin #}
+            {{ form_label(registrationForm.email, 'register_email_label'|trans) }}
+            {# placeholder_email_register olarak güncellendi #}
+            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'placeholder_email_register'|trans}}) }}
             {{ form_errors(registrationForm.email, {'attr': {'class': 'form-error'}}) }}
         </div>
 
         <div class="form-group">
-            {{ form_label(registrationForm.username) }}
-            {{ form_widget(registrationForm.username, {'attr': {'class': 'form-control', 'placeholder': 'Kullanıcı Adınız'}}) }}
+            {{ form_label(registrationForm.username, 'register_username_label'|trans) }}
+            {{ form_widget(registrationForm.username, {'attr': {'class': 'form-control', 'placeholder': 'placeholder_username'|trans}}) }}
             {{ form_errors(registrationForm.username, {'attr': {'class': 'form-error'}}) }}
         </div>
 
         <div class="form-group">
-            {{ form_label(registrationForm.fullName) }}
-            {{ form_widget(registrationForm.fullName, {'attr': {'class': 'form-control', 'placeholder': 'Adınız Soyadınız'}}) }}
+            {{ form_label(registrationForm.fullName, 'register_fullname_label'|trans) }}
+            {{ form_widget(registrationForm.fullName, {'attr': {'class': 'form-control', 'placeholder': 'placeholder_fullname'|trans}}) }}
             {{ form_errors(registrationForm.fullName, {'attr': {'class': 'form-error'}}) }}
         </div>
 
         <div class="form-group">
-            {{ form_label(registrationForm.plainPassword) }}
-            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Şifreniz'}}) }}
+            {{ form_label(registrationForm.plainPassword, 'register_password_label'|trans) }}
+            {# placeholder_password_register olarak güncellendi #}
+            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'placeholder_password_register'|trans}}) }}
             {{ form_errors(registrationForm.plainPassword, {'attr': {'class': 'form-error'}}) }}
         </div>
 
         <div class="form-check">
             {{ form_widget(registrationForm.agreeTerms) }}
-            {{ form_label(registrationForm.agreeTerms, 'Şartları kabul ediyorum.') }}
+            {# Label metnini çeviri anahtarıyla güncelleyin #}
+            {{ form_label(registrationForm.agreeTerms, 'register_agree_terms'|trans) }}
             {{ form_errors(registrationForm.agreeTerms, {'attr': {'class': 'form-error'}}) }}
         </div>
 
-        <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+        {# Buton metnini çeviri anahtarıyla güncelleyin #}
+        <button type="submit" class="btn btn-primary">{{ 'register_button_text'|trans }}</button>
         {{ form_end(registrationForm) }}
     </div>
 {% endblock %}

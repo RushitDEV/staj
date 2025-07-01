@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="navbar-brand d-flex align-items-center">
                 <i class="fas fa-skull gothic-skull-icon me-3"></i>
-                <h1 class="gothic-title mb-0">Gothizen</h1>
+                <h1 class="gothic-title mb-0">Gothizen</h1> {# Marka adı olduğu için çevrilmez #}
             </div>
 
             <button class="navbar-toggler gothic-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -12,48 +12,58 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    {# Tüm bu linkler artık ana sayfaya ve ilgili bölümlerine yönlenecek #}
                     <li class="nav-item">
-                        <a class="nav-link gothic-nav-link" href="#products">
-                            <i class="fas fa-fire me-1"></i>Karanlık Koleksiyon
+                        <a class="nav-link gothic-nav-link" href="{{ path('app_home', {'_locale': app.request.locale}) }}#products"> {# Ana sayfa + #products #}
+                            <i class="fas fa-fire me-1"></i>{{ 'header_link_collection'|trans }}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link gothic-nav-link" href="#about">
-                            <i class="fas fa-moon me-1"></i>Hikayemiz
+                        <a class="nav-link gothic-nav-link" href="{{ path('app_home', {'_locale': app.request.locale}) }}#about"> {# Ana sayfa + #about #}
+                            <i class="fas fa-moon me-1"></i>{{ 'header_link_story'|trans }}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link gothic-nav-link" href="#reviews">
-                            <i class="fas fa-eye me-1"></i>Ruhlar Konuşuyor
+                        <a class="nav-link gothic-nav-link" href="{{ path('app_home', {'_locale': app.request.locale}) }}#reviews"> {# Ana sayfa + #reviews #}
+                            <i class="fas fa-eye me-1"></i>{{ 'header_link_reviews'|trans }}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link gothic-nav-link" href="#contact">
-                            <i class="fas fa-flame me-1"></i>Karanlık Portal
+                        <a class="nav-link gothic-nav-link" href="{{ path('app_home', {'_locale': app.request.locale}) }}#contact"> {# Ana sayfa + #contact #}
+                            <i class="fas fa-flame me-1"></i>{{ 'header_link_contact'|trans }}
                         </a>
                     </li>
                     <li class="nav-item">
+                        {# Etsy linki dış bir URL olduğu için değişikliğe gerek yok #}
                         <a class="btn gothic-btn-primary ms-2" href="https://www.etsy.com/shop/Gothizen?ref=dashboard-header" target="_blank">
-                            <i class="fas fa-external-link-alt me-1"></i>Etsy Mağazası
+                            <i class="fas fa-external-link-alt me-1"></i>{{ 'header_link_etsy_shop'|trans }}
                         </a>
                     </li>
 
-                    {# Kullanıcı oturum durumu kontrolü #}
+                    {# Kullanıcı oturum durumu kontrolü - Login/Register/Logout da ana sayfaya yönlenecek #}
                     {% if not app.user %}
                         <li class="nav-item">
-                            <a class="nav-link btn btn-auth" href="{{ path('app_login') }}">Giriş Yap</a>
+                            {# Login linki artık ana sayfaya yönlenecek #}
+                            <a class="nav-link btn btn-auth" href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'header_link_login'|trans }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-auth" href="{{ path('app_register') }}">Kayıt Ol</a>
+                            {# Register linki artık ana sayfaya yönlenecek #}
+                            <a class="nav-link btn btn-auth" href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'header_link_register'|trans }}</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link btn btn-logout" href="{{ path('app_logout') }}">Çıkış Yap ({{ app.user.username|default(app.user.userIdentifier) }})</a>
+                            {# Logout linki de ana sayfaya yönlenecek (aslında logout controller'ı işini yapıp oradan home'a yönlendirmeli ama şimdilik bu şekilde) #}
+                            <a class="nav-link btn btn-logout" href="{{ path('app_logout', {'_locale': app.request.locale}) }}">{{ 'header_link_logout'|trans }} ({{ app.user.username|default(app.user.userIdentifier) }})</a> {# Logout linkini logout controller'ına bıraktım, bu kısım zaten çalışmalıydı #}
                         </li>
                     {% endif %}
 
-
-
+                    {# Dil Seçenekleri - Bunlar zaten doğruydu, değiştirmenize gerek yok #}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'tr'})) }}">TR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}">EN</a>
+                    </li>
                 </ul>
             </div>
         </nav>
