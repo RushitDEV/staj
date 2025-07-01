@@ -40,22 +40,26 @@
                         </a>
                     </li>
 
-                    {# Kullanıcı oturum durumu kontrolü - Login/Register/Logout da ana sayfaya yönlenecek #}
+                    {# ... (üst kısımdaki diğer linkler ve kodlar) ... #}
+
+                    {# Kullanıcı oturum durumu kontrolü - Login/Register/Logout #}
                     {% if not app.user %}
                         <li class="nav-item">
-                            {# Login linki artık ana sayfaya yönlenecek #}
-                            <a class="nav-link btn btn-auth" href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'header_link_login'|trans }}</a>
+                            {# Login linkini app_login rotasına yönlendir #}
+                            <a class="nav-link btn btn-auth" href="{{ path('app_login', {'_locale': app.request.locale}) }}">{{ 'header_link_login'|trans }}</a>
                         </li>
                         <li class="nav-item">
-                            {# Register linki artık ana sayfaya yönlenecek #}
-                            <a class="nav-link btn btn-auth" href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'header_link_register'|trans }}</a>
+                            {# Register linkini app_register rotasına yönlendir #}
+                            <a class="nav-link btn btn-auth" href="{{ path('app_register', {'_locale': app.request.locale}) }}">{{ 'header_link_register'|trans }}</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            {# Logout linki de ana sayfaya yönlenecek (aslında logout controller'ı işini yapıp oradan home'a yönlendirmeli ama şimdilik bu şekilde) #}
-                            <a class="nav-link btn btn-logout" href="{{ path('app_logout', {'_locale': app.request.locale}) }}">{{ 'header_link_logout'|trans }} ({{ app.user.username|default(app.user.userIdentifier) }})</a> {# Logout linkini logout controller'ına bıraktım, bu kısım zaten çalışmalıydı #}
+                            {# Logout linki zaten doğruydu #}
+                            <a class="nav-link btn btn-logout" href="{{ path('app_logout', {'_locale': app.request.locale}) }}">{{ 'header_link_logout'|trans }} ({{ app.user.username|default(app.user.userIdentifier) }})</a>
                         </li>
                     {% endif %}
+
+                    {# ... (alt kısımdaki dil seçenekleri ve diğer kodlar) ... #}
 
                     {# Dil Seçenekleri - Bunlar zaten doğruydu, değiştirmenize gerek yok #}
                     <li class="nav-item">
