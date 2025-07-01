@@ -14,8 +14,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="gothic-product-card">
                         <div class="gothic-product-image">
-                            {# product.name'i alt niteliğine güvenli bir şekilde basmak için |e('html_attr') kullanıldı #}
-                            <img src="{{ product.image }}" alt="{{ product.name|e('html_attr') }}" class="img-fluid">
+                            {# RESİM YOLU BURADA DOĞRU KULLANILIYOR: Başında "/" var #}
+                            <img src="/{{ product.image }}" alt="{{ product.name|e('html_attr') }}" class="img-fluid">
                             <div class="gothic-product-overlay">
                                 <div class="gothic-product-overlay-content">
                                     <a href="{{ product.etsy_url }}" target="_blank" class="btn gothic-btn-primary">
@@ -32,12 +32,11 @@
                         </div>
 
                         <div class="gothic-product-content">
-                            <h3 class="gothic-product-title">{{ product.name }}</h3> {# Dinamik içerik, çevrilmez #}
-                            {# product.description'ı HTML içeriğine güvenli bir şekilde basmak için |e('html') kullanıldı #}
-                            <p class="gothic-product-description">{{ product.description|e('html') }}</p> {# Dinamik içerik, çevrilmez #}
+                            <h3 class="gothic-product-title">{{ product.name }}</h3>
+                            <p class="gothic-product-description">{{ product.description|e('html') }}</p>
 
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="gothic-product-price">{{ product.price }} {{ product.currency }}</span> {# Dinamik içerik, çevrilmez #}
+                                <span class="gothic-product-price">{{ product.price }} {{ product.currency }}</span>
                                 <a href="{{ product.etsy_url }}" target="_blank" class="btn gothic-btn-sm">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>

@@ -9,16 +9,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends AbstractController
 {
-    // Yalnızca '/' olarak kalsın, prefix otomatik eklenecek
     #[Route('/', name: 'app_home')]
-    // app_home_locale rotasını silin, çünkü app_home ile çakışabilir ve prefix genel olarak her yerde olduğu için gereksizdir.
-        // #[Route('/{_locale}', name: 'app_home_locale', defaults: ['_locale' => '%kernel.default_locale%'], requirements: ['_locale' => 'en|tr'])]
     public function index(Request $request, string $_locale = null): Response
     {
-        // Request objesinden mevcut locale'i alın
         $currentLocale = $request->getLocale();
 
-        // Session'a locale'i kaydedin (zaten yaptığınız gibi, bu kısım iyi)
         if ($this->container->has('session') && $request->getSession()->get('_locale') !== $currentLocale) {
             $request->getSession()->set('_locale', $currentLocale);
         }
@@ -30,7 +25,7 @@ class HomeController extends AbstractController
             'average_rating'    => 4.9,
         ];
 
-        // Ürün verilerini dile göre tanımlayın (BU KISIM HARİKA)
+        // Ürün verileri - 'products' klasör adı burada doğru şekilde kullanılmalı
         $productsData = [
             'en' => [
                 [
@@ -38,7 +33,7 @@ class HomeController extends AbstractController
                     'name' => 'Gothic Angel Print T-Shirt',
                     'description' => '&quot;In Tenebris Lucet&quot; philosophy-powered Gothic Angel T-Shirt. A striking choice for lovers of dark aesthetics. Comfortable and stylish.',
                     'price' => 49.99,
-                    'image' => 'assets/image/products/product4.jpg',
+                    'image' => 'assets/image/products/product4.jpg', // Burası 'products' olarak KALMALI/geri DÜZELTİLMELİ
                     'rating' => 4.8,
                     'etsy_url' => 'https://www.etsy.com/listing/4318539197/gothic-t-shirt-oversized-tee-for-men?ref=related-4&logging_key=25a1c43680e3c6787e80fcff1588b67e1375674d%3A4318539197',
                     'currency' => 'TL',
@@ -49,7 +44,7 @@ class HomeController extends AbstractController
                     'name' => 'Spirit of Dark Blooms - Oversized Gothic T-Shirt',
                     'description' => 'Meet our Oversize Flos in Tenebris Crescit T-Shirt, reflecting the depth and sophistication of Gothic aesthetics. The detailed skull and red rose print, rising on the nobility of black, adds a mysterious charm. This T-shirt, inspired by the message &quot;Blooms in Darkness,&quot; is a perfect choice for both men and women. Highlight your style in daily wear or special events.',
                     'price' => 35.00,
-                    'image' => 'assets/image/products/product2.jpg',
+                    'image' => 'assets/image/products/product2.jpg', // Burası 'products' olarak KALMALI/geri DÜZELTİLMELİ
                     'rating' => 4.5,
                     'etsy_url' => 'https://www.etsy.com/listing/4318162754/gothic-embroidered-cap-in-tenebris-lucet?ref=listings_manager_grid',
                     'currency' => 'TL',
@@ -60,7 +55,7 @@ class HomeController extends AbstractController
                     'name' => 'Dark Aesthetic Cross Motif Baseball Hat',
                     'description' => 'Meet our &quot;In Tenebris Lucet&quot; Gothic Baseball Cap, which will add a mysterious touch to any outfit. Its black color and contrasting white embroidery details, combined with the cross motif, create a powerful stance. The adjustable strap ensures a perfect fit for any head size. It has a wide range of uses, from your casual street style to your special themed events. Shine even in the dark with this cap, ideal for both men and women.',
                     'price' => 89.00,
-                    'image' => 'assets/image/products/product3.jpg',
+                    'image' => 'assets/image/products/product3.jpg', // Burası 'products' olarak KALMALI/geri DÜZELTİLMELİ
                     'rating' => 4.9,
                     'etsy_url' => 'https://www.etsy.com/listing/4307373982/gothic-t-shirt-dark-tees-alternative?ref=related-5&logging_key=b8c542f741547a5341e043e0892b9d37d06f7b4e%3A4307373982',
                     'currency' => 'TL',
@@ -73,9 +68,9 @@ class HomeController extends AbstractController
                     'name' => 'Gotik Melek Baskılı Tişört',
                     'description' => '&quot;In Tenebris Lucet&quot; felsefesiyle güçlenen Gotik Melek Tişörtü. Karanlık estetiği sevenler için çarpıcı bir seçim. Konforlu ve stil sahibi.',
                     'price' => 49.99,
-                    'image' => 'assets/image/products/product4.jpg',
+                    'image' => 'assets/image/products/product4.jpg', // Burası 'products' olarak KALMALI/geri DÜZELTİLMELİ
                     'rating' => 4.8,
-                    'etsy_url' => 'https://www.etsy.com/listing/4318539197/gothic-t-shirt-oversized-tee-for-men?ref=related-4&logging_key=25a1c43680e3c6787e80fcff1588b67e1375674d%3A4318539197',
+                    'etsy_url' => 'https://www.etsy.com/listing/4307373982/gothic-t-shirt-dark-tees-alternative?ref=related-5&logging_key=b8c542f741547a5341e043e0892b9d37d06f7b4e%3A4307373982',
                     'currency' => 'TL',
                     'stock_status' => 'in_stock',
                 ],
@@ -84,9 +79,9 @@ class HomeController extends AbstractController
                     'name' => 'Karanlık Çiçeklerin Ruhu - Oversize Gotik Tişört',
                     'description' => 'Gotik estetiğin derinliğini ve sofistikeliğini yansıtan Oversize Flos in Tenebris Crescit Tişörtümüzle tanışın. Siyahın asaleti üzerinde yükselen detaylı kurukafa ve kırmızı gül baskısı, gizemli bir çekicilik katıyor. &quot;Karanlıkta çiçek açar&quot; mesajıyla ilham veren bu tişört, hem erkekler hem de kadınlar için mükemmel bir seçimdir. Günlük kullanımda veya özel etkinliklerde tarzınızı öne çıkarın.',
                     'price' => 35.00,
-                    'image' => 'assets/image/products/product2.jpg',
+                    'image' => 'assets/image/products/product2.jpg', // Burası 'products' olarak KALMALI/geri DÜZELTİLMELİ
                     'rating' => 4.5,
-                    'etsy_url' => 'https://www.etsy.com/listing/4318162754/gothic-embroidered-cap-in-tenebris-lucet?ref=listings_manager_grid',
+                    'etsy_url' => 'https://www.etsy.com/listing/4318539197/gothic-t-shirt-oversized-tee-for-men?ref=related-4&logging_key=25a1c43680e3c6787e80fcff1588b67e1375674d%3A4318539197',
                     'currency' => 'TL',
                     'stock_status' => 'in_stock',
                 ],
@@ -95,16 +90,16 @@ class HomeController extends AbstractController
                     'name' => 'Karanlık Estetik Haç Motifli Beyzbol Şapkası',
                     'description' => 'Her kombininize gizemli bir hava katacak &quot;In Tenebris Lucet&quot; Gotik Baseball Şapkamızla tanışın. Siyah rengi ve kontrast oluşturan beyaz nakış detayları, haç motifiyle birleşerek güçlü bir duruş sergiler. Ayarlanabilir kayışı ile her baş ölçüsüne uyum sağlar. Gündelik sokak stilinizden, özel temalı etkinliklerinize kadar geniş bir kullanım alanına sahiptir. Hem erkekler hem de kadınlar için ideal olan bu şapka ile karanlıkta bile parlayın.',
                     'price' => 89.00,
-                    'image' => 'assets/image/products/product3.jpg',
+                    'image' => 'assets/image/products/product3.jpg', // Burası 'products' olarak KALMALI/geri DÜZELTİLMELİ
                     'rating' => 4.9,
-                    'etsy_url' => 'https://www.etsy.com/listing/4307373982/gothic-t-shirt-dark-tees-alternative?ref=related-5&logging_key=b8c542f741547a5341e043e0892b9d37d06f7b4e%3A4307373982',
+                    'etsy_url' => 'https://www.etsy.com/listing/4318162754/gothic-embroidered-cap-in-tenebris-lucet?ref=listings_manager_grid',
                     'currency' => 'TL',
                     'stock_status' => 'out_of_stock',
                 ],
             ],
         ];
 
-        // Müşteri yorumlarını dile göre tanımlayın (BU KISIM HARİKA)
+        // Müşteri yorumlarını dile göre tanımlayın
         $reviewsData = [
             'en' => [
                 [
@@ -196,9 +191,8 @@ class HomeController extends AbstractController
             ],
         ];
 
-        // Mevcut dile göre doğru ürün ve yorum dizisini seç
-        $featuredProducts = $productsData[$currentLocale] ?? $productsData['en']; // Eğer lokal bulunamazsa varsayılan İngilizce
-        $customerReviews = $reviewsData[$currentLocale] ?? $reviewsData['en']; // Eğer lokal bulunamazsa varsayılan İngilizce
+        $featuredProducts = $productsData[$currentLocale] ?? $productsData['en'];
+        $customerReviews = $reviewsData[$currentLocale] ?? $reviewsData['en'];
 
         $successMessage = null;
         $errorMessage = null;
@@ -207,8 +201,8 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
             'site_title' => 'Dark Arts Atelier - Gotik El Yapımı Sanat',
             'stats' => $websiteStats,
-            'featured_products' => $featuredProducts, // Seçilen dilin ürünleri
-            'reviews' => $customerReviews,           // Seçilen dilin yorumları
+            'featured_products' => $featuredProducts,
+            'reviews' => $customerReviews,
             'success_message' => $successMessage,
             'error_message' => $errorMessage,
         ]);
