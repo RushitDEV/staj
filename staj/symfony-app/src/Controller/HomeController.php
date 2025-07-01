@@ -26,7 +26,8 @@ class HomeController extends AbstractController
                 'name' => 'Gotik Kolye "Gece Gözyaşı"',
                 'description' => 'El yapımı gümüş ve obsidyen detaylı mistik kolye.',
                 'price' => 49.99,
-                'image' => '/image/products/product1.jpg',
+                // BURAYI DÜZELTTİK: public/assets/image/products/product1.jpg oldu
+                'image' => 'assets/image/products/product4.jpg',
                 'rating' => 4.8,
                 'etsy_url' => 'https://www.etsy.com/listing/4318539197/gothic-t-shirt-oversized-tee-for-men?ref=related-4&logging_key=25a1c43680e3c6787e80fcff1588b67e1375674d%3A4318539197',
                 'currency' => 'TL',
@@ -37,7 +38,8 @@ class HomeController extends AbstractController
                 'name' => 'Karga Kafatası Dekorasyonu',
                 'description' => 'Reçineden yapılmış detaylı karga kafatası figürü, ev dekorasyonu için.',
                 'price' => 35.00,
-                'image' => '/image/products/product2.jpg',
+                // BURAYI DÜZELTTİK: public/assets/image/products/product2.jpg oldu
+                'image' => 'assets/image/products/product2.jpg',
                 'rating' => 4.5,
                 'etsy_url' => 'https://www.etsy.com/listing/4318162754/gothic-embroidered-cap-in-tenebris-lucet?ref=listings_manager_grid',
                 'currency' => 'TL',
@@ -48,7 +50,8 @@ class HomeController extends AbstractController
                 'name' => 'Kadife ve Dantel Korset',
                 'description' => 'Gotik tarzda el yapımı kadife ve dantel korset.',
                 'price' => 89.00,
-                'image' => '/image/products/product3.jpg.jpg',
+                // BURAYI DÜZELTTİK: public/assets/image/products/product3.jpg oldu (çift .jpg hatası düzeltildi)
+                'image' => 'assets/image/products/product3.jpg',
                 'rating' => 4.9,
                 'etsy_url' => 'https://www.etsy.com/listing/4307373982/gothic-t-shirt-dark-tees-alternative?ref=related-5&logging_key=b8c542f741547a5341e043e0892b9d37d06f7b4e%3A4307373982',
                 'currency' => 'TL',
@@ -91,7 +94,7 @@ class HomeController extends AbstractController
         // İletişim formu başarı mesajı için değişkeni tanımla
         $successMessage = null;
         // İletişim formu HATA mesajı için değişkeni tanımla
-        $errorMessage = null; // <-- BU SATIRI EKLİYORUZ
+        $errorMessage = null;
 
         // home/index.html.twig şablonunu render ederken tüm bu verileri gönderiyoruz
         return $this->render('home/index.html.twig', [
@@ -101,7 +104,7 @@ class HomeController extends AbstractController
             'featured_products' => $featuredProducts,
             'reviews' => $customerReviews,
             'success_message' => $successMessage,
-            'error_message' => $errorMessage, // <-- BU SATIRI EKLİYORUZ
+            'error_message' => $errorMessage,
         ]);
     }
 }

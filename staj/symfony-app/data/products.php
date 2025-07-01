@@ -6,7 +6,7 @@ return [
         'description' => 'El oyması kafatası formunda gotik mumluk, antik bronz kaplama ile karanlık atmosfer yaratır',
         'price' => 150.0,
         'currency' => 'TL',
-        'image' => '/image/products/skull-candle-holder.jpg',
+        'image' => 'assets/image/products/product1.jpg',
         'etsy_url' => 'https://www.etsy.com/listing/123456789/gothic-skull-candle-holder',
         'category' => 'dekorasyon',
         'featured' => true,
