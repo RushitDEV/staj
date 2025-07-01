@@ -1,0 +1,8 @@
+# config/packages/translation.yaml
+framework:
+    default_locale: 'tr' # Projenin varsayılan dili
+    translator:
+        default_path: '%kernel.project_dir%/translations' # Çeviri dosyalarının yolu (varsayılan)
+        fallbacks:
+            - 'en' # Eğer 'tr' çevirisi bulunamazsa 'en' diline geri dön
+        # logging: '%kernel.debug%' # Hata ayıklama modunda çeviri günlüklerini etkinleştir
