@@ -23,8 +23,8 @@ class HomeController extends AbstractController
         $featuredProducts = [
             [
                 'id' => 1,
-                'name' => 'Gotik Kolye "Gece Gözyaşı"',
-                'description' => 'El yapımı gümüş ve obsidyen detaylı mistik kolye.',
+                'name' => 'Gothic Angel Print T-Shirt"',
+                'description' => '"In Tenebris Lucet" felsefesiyle güçlenen Gotik Melek Tişörtü. Karanlık estetiği sevenler için çarpıcı bir seçim. Konforlu ve stil sahibi..',
                 'price' => 49.99,
                 // BURAYI DÜZELTTİK: public/assets/image/products/product1.jpg oldu
                 'image' => 'assets/image/products/product4.jpg',
@@ -35,8 +35,10 @@ class HomeController extends AbstractController
             ],
             [
                 'id' => 2,
-                'name' => 'Karga Kafatası Dekorasyonu',
-                'description' => 'Reçineden yapılmış detaylı karga kafatası figürü, ev dekorasyonu için.',
+                'name' => 'Spirit of Dark Blooms - Oversized Gothic T-Shirt',
+                'description' => 'Gotik estetiğin derinliğini ve sofistikeliğini yansıtan Oversize Flos in Tenebris Crescit Tişörtümüzle tanışın. Siyahın asaleti üzerinde yükselen detaylı kurukafa ve kırmızı gül baskısı, gizemli bir çekicilik katıyor. "Karanlıkta çiçek açar" mesajıyla ilham veren bu tişört, hem erkekler hem de kadınlar için mükemmel bir seçimdir. Günlük kullanımda veya özel etkinliklerde tarzınızı öne çıkarın.
+
+',
                 'price' => 35.00,
                 // BURAYI DÜZELTTİK: public/assets/image/products/product2.jpg oldu
                 'image' => 'assets/image/products/product2.jpg',
@@ -47,8 +49,8 @@ class HomeController extends AbstractController
             ],
             [
                 'id' => 3,
-                'name' => 'Kadife ve Dantel Korset',
-                'description' => 'Gotik tarzda el yapımı kadife ve dantel korset.',
+                'name' => 'Dark Aesthetic Cross Motif Baseball Hat',
+                'description' => 'Her kombininize gizemli bir hava katacak "In Tenebris Lucet" Gotik Baseball Şapkamızla tanışın. Siyah rengi ve kontrast oluşturan beyaz nakış detayları, haç motifiyle birleşerek güçlü bir duruş sergiler. Ayarlanabilir kayışı ile her baş ölçüsüne uyum sağlar. Gündelik sokak stilinizden, özel temalı etkinliklerinize kadar geniş bir kullanım alanına sahiptir. Hem erkekler hem de kadınlar için ideal olan bu şapka ile karanlıkta bile parlayın',
                 'price' => 89.00,
                 // BURAYI DÜZELTTİK: public/assets/image/products/product3.jpg oldu (çift .jpg hatası düzeltildi)
                 'image' => 'assets/image/products/product3.jpg',
@@ -62,31 +64,47 @@ class HomeController extends AbstractController
         // Müşteri yorumları için örnek veriler
         $customerReviews = [
             [
-                'author' => 'Luna Shadow',
+                'author' => 'Muhammed Çağrı Karaca',
                 'rating' => 5,
-                'comment' => 'Kolye muhteşem! Tam da istediğim karanlık ve zarif bir parça. Hızlı kargo için teşekkürler.',
+                'comment' => 'T-Shirtler muhteşem! Tam da istediğim karanlık ve zarif bir parça. Hızlı kargo için teşekkürler.',
                 'date' => '2025-06-20',
                 'verified' => true,
             ],
             [
-                'author' => 'Victor Blackwood',
+                'author' => 'Enes Altuğ Karaca ',
                 'rating' => 4,
                 'comment' => 'Kafatası figürü detaylarıyla çok başarılı. Koleksiyonuma harika bir ek oldu. Tekrar alışveriş yapacağım.',
                 'date' => '2025-06-18',
                 'verified' => false,
             ],
             [
-                'author' => 'Elara Nightshade',
+                'author' => 'Emirhan Karaca',
                 'rating' => 5,
-                'comment' => 'Korset inanılmaz kaliteli ve üzerime tam oturdu. Tam bir sanat eseri! Dark Arts Atelier\'e bayılıyorum.',
+                'comment' => 'Şapka inanılmaz kaliteli ve kafama tam oturdu. Tam bir sanat eseri! Gothizen \'e bayılıyorum.',
                 'date' => '2025-06-15',
                 'verified' => true,
             ],
             [
-                'author' => 'Raven Darkholme',
+                'author' => 'Meryem Ekinci',
                 'rating' => 5,
                 'comment' => 'Beklentilerimin çok üzerinde bir alışveriş oldu. Ürünler gerçekten eşsiz ve ruhunuzu yansıtıyor.',
                 'date' => '2025-06-10',
+                'verified' => true,
+            ],
+
+            [
+                'author' => 'Behzat Mamak',
+                'rating' => 5,
+                'comment' => 'Thirtler harika spor yaparken şarkıyla çok uyumlu oluyor :)',
+                'date' => '2025-06-15',
+                'verified' => true,
+            ],
+
+            [
+                'author' => 'Kıvanç Havacı',
+                'rating' => 5,
+                'comment' => 'Bu ürünler inanilmaz kaliteli ve güzel Gothizen süpersin',
+                'date' => '2025-06-15',
                 'verified' => true,
             ],
         ];
